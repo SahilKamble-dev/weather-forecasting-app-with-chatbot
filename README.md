@@ -29,12 +29,8 @@ The application helps users check weather conditions easily for any city with a 
 
 ## Screenshots
 
-weather-forecasting-app-with-chatbot
-/output image.png
+![Weather App](output-image.png)
 
-* Home Page
-* Weather Result
-* Chatbot Interaction
 
 ---
 
