@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Weather Assistant</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- JS -->
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div class="weather-input">
+
+        <div class="input-group">
+            <input type="text" id="userLocation" placeholder="Search for place...">
+
+            <select id="converter">
+                <option>℃</option>
+                <option>℉</option>
+            </select>
+
+            <i class="fa fa-search" onclick="findUserLocation()"></i>
+        </div>
+
+        <div class="weatherIcon"></div>
+
+        <h2 class="temperature"></h2>
+        <div class="feelslike"></div>
+        <div class="description"></div>
+
+        <hr>
+
+        <div class="date"></div>
+        <div class="city"></div>
+
+        <!-- ✅ AI Suggestion -->
+        <div id="aiSuggestion" class="ai-box"></div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="weather-output">
+
+        <h2 class="heading">Today's Highlights</h2>
+
+        <div class="Highlights">
+
+            <div class="humidity">
+                Humidity <i class="fa-solid fa-water"></i>
+                <h1 id="Hvalue"></h1>
+            </div>
+
+            <div class="wind-speed">
+                Wind Speed <i class="fa-solid fa-wind"></i>
+                <h1 id="Wvalue"></h1>
+            </div>
+
+            <div class="sun">
+                <span>
+                    <i class="fa-solid fa-sun"></i>
+                    <p><span id="SRValue"></span> Sunrise</p>
+                </span>
+                <span>
+                    <i class="fa-regular fa-sun"></i>
+                    <p><span id="SSValue"></span> Sunset</p>
+                </span>
+            </div>
+
+            <div class="clouds">
+                Clouds <i class="fa-solid fa-cloud"></i>
+                <h1 id="Cvalue"></h1>
+            </div>
+
+            <div class="visibility">
+                Visibility <i class="fa-solid fa-eye"></i>
+                <h1 id="Vvalue"></h1>
+            </div>
+
+            <div class="pressure">
+                Pressure <i class="fa-solid fa-gauge"></i>
+                <h1 id="Pvalue"></h1>
+            </div>
+
+        </div>
+
+        <!-- Forecast -->
+        <h2 class="heading">Last Five Days</h2>
+        <div class="Forecast"></div>
+
+    </div>
+
+</div>
+
+
+<div class="chatbot">
+
+    <h4>🤖 Weather AI</h4>
+
+    <div id="chatResponse" class="chat-box"></div>
+
+    <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Ask about weather...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+</body>
+</html>

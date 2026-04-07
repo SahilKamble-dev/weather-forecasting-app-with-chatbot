@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #78c1f3, #f6f6f6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px);
+}
+
+/* LEFT SIDE */
+.weather-input {
+    width: 35%;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 2rem 1.5rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* FIXED NAME */
+.weatherIcon {
+    width: 120px;
+    height: 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 2rem 0;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.input-group i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #023e8a;
+    cursor: pointer;
+}
+
+.temperature {
+    font-size: 4rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.description,
+.city,
+.date,
+.feelslike {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+/* AI SUGGESTION BOX */
+.ai-box {
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+}
+
+/* RIGHT SIDE */
+.weather-output {
+    width: 65%;
+    padding: 2rem;
+    background: rgba(255,255,255,0.9);
+    overflow-y: auto;
+}
+
+.heading {
+    margin-bottom: 1rem;
+    color: #023e8a;
+}
+
+/* HIGHLIGHTS */
+.Highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.Highlights div {
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.Highlights div:hover {
+    transform: scale(1.05);
+}
+
+.Highlights i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* FORECAST */
+.Forecast {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.forecast-card {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 15px;
+    padding: 1rem;
+    width: 120px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.forecast-card .day {
+    font-weight: 600;
+    color: #03045e;
+}
+
+.forecast-card img {
+    width: 64px;
+}
+
+.forecast-card .temp {
+    color: #0077b6;
+}
+
+.forecast-card .desc {
+    font-size: 0.8rem;
+}
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: #000;
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    font-family: sans-serif;
+}
+
+/* Chat Box */
+.chat-box {
+    height: 160px;
+    overflow-y: auto;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Chat Bubbles */
+.chat-box p {
+    padding: 6px 10px;
+    border-radius: 12px;
+    max-width: 80%;
+    margin: 2px 0;
+}
+
+.chat-box p b {
+    display: none;
+}
+
+/* User Message */
+.chat-box p:has(b:contains("You")) {
+    align-self: flex-end;
+    background: #0077b6;
+    color: white;
+}
+
+/* AI Message */
+.chat-box p:has(b:contains("AI")) {
+    align-self: flex-start;
+    background: #eaeaea;
+}
+
+/* Input */
+.chat-input {
+    display: flex;
+    gap: 5px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.chat-input button {
+    padding: 6px 12px;
+    background: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chat-input button:hover {
+    background: #023e8a;
+}
+
+/* Typing Animation */
+.typing {
+    display: flex;
+    gap: 4px;
+    padding: 6px 10px;
+    background: #eaeaea;
+    border-radius: 12px;
+    width: fit-content;
+}
+
+.typing span {
+    width: 6px;
+    height: 6px;
+    background: #555;
+    border-radius: 50%;
+    animation: blink 1.4s infinite;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0%, 80%, 100% { opacity: 0; }
+    40% { opacity: 1; }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .chatbot {
+        width: 90%;
+        right: 5%;
+    }
+}
